@@ -185,6 +185,7 @@ header {
     justify-content: center;
     gap: 15px; /* Espaciado entre botones */
     margin: 20px 0; /* Espaciado vertical */
+    flex-wrap: wrap; /* Permite que los botones se ajusten en varias filas en pantallas pequeñas */
 }
 
 .filtro-btn {
@@ -224,6 +225,7 @@ header {
 .filtro-btn:active {
     transform: scale(0.95); /* Efecto de clic */
 }
+
 
 
 /* SECCIÓN DE COMPRAR EN SI   */
@@ -830,5 +832,44 @@ header {
 
     .formulario-contacto button {
         width: auto;
+    }
+}
+/* Estilos responsivos */
+@media (max-width: 1024px) {
+    .filtro-btn {
+        width: 140px; /* Reduce el ancho */
+        height: 80px; /* Reduce la altura */
+        font-size: 0.9rem; /* Reduce el tamaño de la fuente */
+        padding: 15px 8px; /* Ajusta el espaciado interno */
+    }
+    .filtro-btn i.material-icons {
+        font-size: 24px; /* Reduce el tamaño del icono */
+    }
+}
+
+@media (max-width: 768px) {
+    .filtro-btn {
+        width: 120px;
+        height: 70px;
+        font-size: 0.8rem;
+        padding: 10px 6px;
+    }
+    .filtro-btn i.material-icons {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .filtro-btn {
+        width: 100px;
+        height: 60px;
+        font-size: 0.7rem;
+        padding: 8px 4px;
+    }
+    .filtro-btn i.material-icons {
+        font-size: 18px;
+    }
+    .filtros {
+        gap: 10px; /* Menor separación entre botones */
     }
 }
