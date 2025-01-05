@@ -90,7 +90,7 @@ document.getElementById('formularioContacto').addEventListener('submit', functio
     const mensajeWhatsApp = `Hola, soy ${nombre} ${apellido}. Mi ubicación de referencia es ${referencia}. Quiero decir: ${mensaje}`;
 
     // Redirigir a WhatsApp
-    const numeroTelefono = '+51987654321'; // Número de WhatsApp
+    const numeroTelefono = '+51964976727'; // Número de WhatsApp
     const url = `https://api.whatsapp.com/send?phone=${numeroTelefono}&text=${encodeURIComponent(mensajeWhatsApp)}`;
 
     window.open(url, '_blank');
