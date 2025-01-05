@@ -1,0 +1,834 @@
+/*estilo*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,800;1,900&family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+*{   
+margin:0;
+padding: 0;
+box-sizing: border-box;
+scroll-behavior: smooth;
+scroll-padding-top: 2rem;
+list-style: none;
+text-decoration: none;
+font-family: "Poppins", sans-serif;
+}
+/* SECCIÓN WHATSAPP */
+/* Contenedor del botón y mensaje */
+.wsp-container {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: flex;
+    align-items: center;
+    z-index: 100;
+}
+
+/* Botón de WhatsApp (mantener diseño original) */
+.btn-wsp {
+    width: 60px;
+    height: 60px;
+    background: #25d366;
+    color: #FFF;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+    transition: all 300ms ease;
+}
+
+.btn-wsp:hover {
+    background: #20ba5a;
+}
+
+/* Mensaje al lado del botón */
+.wsp-message {
+    margin-right: 0px; /* Ajusta para que esté a la derecha */
+    background-color: #25d366;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 25px;
+    font-size: 14px;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+    white-space: nowrap; /* Evita que el texto se parta */
+    opacity: 0; /* Inicialmente invisible */
+    transform: translateX(10px);
+    transition: all 300ms ease;
+    position: absolute;
+    right: 80px; /* Se ajusta respecto al ícono */
+}
+
+/* Efecto al pasar el mouse */
+.wsp-container:hover .wsp-message {
+    opacity: 1;
+    transform: translateX(0); /* Vuelve al lugar original */
+}
+
+
+
+
+:root {
+  --text-color: #000000;
+  --main-color: #83b735;
+  --background-color: #f9f9f9;
+  --secondary-color: #ffffff;
+  --border-color: #ddd;
+  --btn-hover-color: #6ea12c;
+  --facebook-color: #4267B2;
+  --whatsapp-color: #25D366;
+  --tiktok-color: #00c3ff;
+}
+section {
+    padding: 50px 10%;
+}
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 100px;
+  background: #edecea;
+}
+.logo {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.logo span {
+    color: var(--main-color);
+}
+.navbar {
+    display: flex; /* Asegura que los elementos estén en línea */
+    justify-content: space-around; /* Espaciado uniforme */
+    align-items: center; /* Centra verticalmente */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    visibility: visible; /* Visible por defecto */
+    opacity: 1;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.navbar li {
+    padding: 10px;
+}
+
+.navbar a {
+    font-size: 1rem;
+    padding: 10px 20px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.navbar a:hover {
+    color: var(--main-color);
+}
+.inicio {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(Images/fondo1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column; /* Los elementos están en una columna */
+    align-items: flex-start; /* Todo a la izquierda */
+    justify-content: flex-start; /* Asegura que los elementos estén al inicio */
+}
+
+.inicio-texto {
+    margin-top: 15rem;
+    text-align: left; /* Asegura que todos los elementos dentro estén alineados a la izquierda */
+}
+
+.inicio-texto h1 {
+    font-size: 2.7rem;
+    text-align: left; /* Texto alineado a la izquierda */
+}
+
+.inicio-texto p {
+    font-size: 0.938rem;
+    margin: 0.4rem 0 1.8rem;
+    text-align: left; /* Texto alineado a la izquierda */
+}
+
+.inicio-texto span {
+    color: var(--main-color);
+    text-align: left; /* Texto alineado a la izquierda */
+}
+
+.btn {
+    padding: 10px 14px;
+    background: var(--main-color);
+    color: #fff;
+    border-radius: 0.3rem;
+    font-size: 14px;
+    text-align: center; /* El texto dentro del botón está centrado */
+    margin: 0; /* Quita márgenes extra */
+    align-self: flex-start; /* Asegura que el botón se alinee al inicio del contenedor */
+}
+
+.btn:hover {
+    background: #8fc538;
+}
+
+
+/* SECCIÓN DE COMPRAR  NAVEGACIÓN */
+/* ESTILOS PARA LOS FILTROS */
+.filtros {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Espaciado entre botones */
+    margin: 20px 0; /* Espaciado vertical */
+}
+
+.filtro-btn {
+    display: flex;
+    flex-direction: column; /* Alinea el texto debajo del icono */
+    align-items: center; /* Centra el contenido del botón */
+    justify-content: center; /* Centra verticalmente el contenido */
+    background-color: #fff; /* Fondo blanco */
+    color: gray; /* Color del texto y el icono */
+    border: 2px solid gray; /* Borde gris */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px 10px; /* Espaciado interno */
+    width: 180px; /* Ancho fijo */
+    height: 100px; /* Altura específica */
+    font-size: 1rem; /* Tamaño del texto */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border 0.3s; /* Animación suave */
+}
+
+.filtro-btn i.material-icons {
+    font-size: 28px; /* Tamaño del icono */
+    margin-bottom: 8px; /* Separación entre el icono y el texto */
+    color: gray; /* Mismo color inicial del texto */
+    transition: color 0.3s; /* Transición suave para el color */
+}
+
+.filtro-btn:hover {
+    background-color: var(--main-color); /* Fondo al color principal */
+    color: #fff; /* Texto en blanco */
+    border-color: var(--main-color); /* Cambia el borde al color principal */
+}
+
+.filtro-btn:hover i.material-icons {
+    color: #fff; /* Iconos cambian a blanco */
+}
+
+.filtro-btn:active {
+    transform: scale(0.95); /* Efecto de clic */
+}
+
+
+/* SECCIÓN DE COMPRAR EN SI   */
+.comprar .heading {
+    text-align: center; 
+}
+  
+.comprar .heading span {
+    color: var(--main-color); 
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 0.3px; 
+    font-weight: bold;
+}
+  
+.comprar .heading h2 {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.comprar-contendor {
+    display: flex;
+    flex-wrap: wrap; /* Permite múltiples productos en fila */
+    gap: 20px; /* Espaciado entre productos */
+    justify-content: center; /* Centra los productos */
+    padding: 20px;
+}
+
+/* Contenedor principal */
+.cajon {
+    display: flex;
+    flex-direction: column; /* Organiza en columna */
+    align-items: flex-start; /* Alinea al inicio horizontalmente */
+    padding: 16px;
+    border: 1px solid #d3d3d3;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 250px;
+    text-align: left; /* Texto alineado a la izquierda */
+    position: relative; /* Para manejar la posición de los elementos internos */
+}
+
+/* Imagen del producto */
+.cajon-imagen img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+/* Efecto hover en la imagen */
+.cajon-imagen img:hover {
+    transform: scale(1.05);
+}
+
+/* Título del producto */
+.titulo-principal {
+    display: flex;
+    justify-content: space-between; /* Espacio entre el nombre y las estrellas */
+    width: 100%;
+    align-items: center; /* Alinea verticalmente */
+    margin-bottom: 8px; /* Espaciado con el precio */
+}
+
+.producto-nombre {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 0;
+}
+
+/* Calificación de estrellas */
+.destacado {
+    display: flex;
+    gap: 2px;
+    font-size: 1rem;
+    color: var(--main-color);
+}
+
+/* Precio y carrito juntos */
+.producto-precio {
+    display: flex;
+    align-items: center; /* Alinea verticalmente */
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--text-color);
+    margin-top: 8px;
+}
+
+.producto-precio span {
+    color: var(--main-color); /* Color principal para el precio */
+}
+
+.producto-precio i {
+    position: absolute;
+    bottom:0;
+    right: 0;
+    padding: 7px;
+    font-size: 20px;
+    color: #fff;
+    border-radius: 4px 0 4px 0;
+    background: var(--main-color);
+}
+
+/* Hover en el ícono del carrito */
+.producto-precio i:hover {
+    color: #3a6100;
+}
+
+
+/* LA SECCIÓN DE LO ÚLTIMO */
+.últimos .heading {
+    text-align: center; 
+}
+  
+.últimos .heading span {
+    color: var(--main-color); 
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 0.3px; 
+    font-weight: bold;
+}
+  
+.últimos .heading h2 {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* SECCIÓN DE NOSOTROS */
+.beneficio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 0.3rem;
+}
+
+.beneficio:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.beneficio i {
+    font-size: 4rem; /* Tamaño del icono */
+    color: #555; /* Color base */
+    transition: color 0.3s ease;
+}
+
+.beneficio:hover i {
+    color: green; /* Color al pasar el cursor */
+}
+
+.beneficio .titulo-beneficio {
+    font-size: 1.2rem; /* Tamaño del texto */
+    font-weight: bold;
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+.beneficio:hover .titulo-beneficio {
+    color: green; /* Color del texto al pasar el cursor */
+}
+
+/* SECCIÓN DE NOSOTROS */
+.nosotros {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.nosotros-imagen img {
+    width: 80%; 
+    border-radius: 10px; 
+    object-fit: contain;
+}
+
+.nosotros-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nosotros-text h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--main-color);
+    margin-bottom: 1rem;
+}
+
+
+/*/SECCION DE COMENTARIOS*/
+.comentarios .heading {
+    text-align: center;
+  }
+  
+  .comentarios .heading span {
+    color: var(--main-color);
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: bold;
+  }
+  
+  .comentarios .heading h2 {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* Lista de comentarios */
+  .comentarios-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-height: 500px;
+    overflow: hidden;
+  }
+  
+  /* Comentario */
+  .comentario {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .comentario i {
+    font-size: 2rem;
+    color: var(--main-color);
+  }
+  
+  .mensaje {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mensaje h3 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .mensaje p {
+    margin: 5px 0 0;
+    font-size: 0.9rem;
+    color: var(--text-color);
+  }
+  
+  /* Botón de "Ver más" */
+  .ver-mas {
+    background-color: #ccc;
+    color: #000;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    margin: 15px auto;
+    display: block;
+  }
+  
+  .ver-mas:hover {
+    background-color: #bbb;
+  }
+  
+  /* Formulario */
+  .comentario-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .comentario-form input,
+  .comentario-form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 0.9rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  /* Botón de "Enviar" */
+  .comentario-form button {
+    background-color: var(--main-color);
+    color: #fff;
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .comentario-form button:hover {
+    background-color: #006400; /* Verde oscuro */
+  }
+
+
+  #menu-icon {
+    font-size: 30px;
+    cursor: pointer;
+    display: none; /* Oculta el ícono por defecto */
+}
+
+
+/* CONTACTANOS */
+
+
+/* Contacto - Mapa */
+.mapa-contacto {
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+
+.contact-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    border-radius: 8px;
+}
+
+.contacto-info, .formulario-contacto, .redes-sociales {
+    flex: 1 1 calc(50% - 20px);
+}
+.contacto-info h2 {
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--main-color);
+}
+
+.formulario-contacto h3 {
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: #021007;
+}
+
+.contacto-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contacto-info ul li {
+    font-weight: 500;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    color: #0c0c0c;
+}
+
+.contacto-info ul li i {
+    margin-right: 10px;
+    font-size: 24px;
+    color: var(--main-color);
+}
+
+.formulario-contacto {
+    width: 45%;
+}
+
+/* Redes sociales alineadas a la izquierda */
+.redes-sociales {
+    display: flex;
+    justify-content: flex-start; /* Alineación a la izquierda */
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.redes-sociales a {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    transition: color 0.3s;
+}
+
+.redes-sociales a:hover i.bxl-facebook-square {
+    color: var(--facebook-color);
+}
+
+.redes-sociales a:hover i.bxl-whatsapp {
+    color: var(--whatsapp-color);
+}
+
+.redes-sociales a:hover i.bxl-tiktok {
+    color: var(--tiktok-color);
+}
+
+.formulario-contacto input, .formulario-contacto textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+}
+
+.formulario-contacto button {
+    width: 100%;
+    background-color: var(--main-color);
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.formulario-contacto button:hover {
+    background-color: #000;
+}
+
+
+
+
+  /* ESTILO RESPONSIVE  */
+
+@media (max-width: 900px) {
+    header {
+      padding: 10px 4%;
+    }
+
+  
+   /* Estilo responsivo para pantallas pequeñas */
+@media (max-width: 900px) {
+    .navbar {
+        display: none; /* Oculta la barra en pantallas pequeñas */
+        position: absolute;
+        top: 100%;
+        right: 0;
+        flex-direction: column; /* Disposición en columna */
+        background: #fff;
+        box-shadow: 0 4px 4px rgb(0 0 0 /10%);
+        width: 100%; /* Ocupa todo el ancho */
+        text-align: center;
+    }
+
+    .navbar.active {
+        display: flex; /* Muestra el menú hamburguesa activo */
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .navbar li {
+        width: 100%;
+    }
+
+    .navbar a {
+        padding: 0.8rem;
+        display: block;
+    }
+
+    .navbar a:hover {
+        color: #fff;
+        background: var(--main-color);
+    }
+}
+@media (max-width: 900px) {
+    #menu-icon {
+        display: block; 
+    }
+}
+    .inicio {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .comprar-contendor {
+      grid-template-columns: 1fr;
+    }
+  
+  
+  @media (max-width: 480px) {
+    .btn {
+      font-size: 0.9rem;
+      padding: 8px 15px;
+    }
+  
+    .heading h2 {
+      font-size: 2rem;
+    }
+  
+    .inicio-texto h1 {
+      font-size: 2rem;
+    }
+  }
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .nosotros {
+        flex-direction: column; /* Cambia a disposición vertical */
+        align-items: center;
+    }
+
+    .nosotros-imagen img {
+        width: 100%; /* Asegura que la imagen ocupe todo el ancho */
+    }
+
+    .beneficio i {
+        font-size: 3rem; /* Reducir tamaño del ícono */
+    }
+
+    .beneficio .titulo-beneficio {
+        font-size: 1rem; /* Reducir tamaño del texto */
+    }
+
+    .nosotros-text h2 {
+        font-size: 1.5rem; /* Ajustar tamaño del encabezado */
+    }
+}
+
+@media (max-width: 480px) {
+    .beneficio {
+        padding: 0.5rem; /* Reducir relleno en pantallas más pequeñas */
+    }
+
+    .beneficio i {
+        font-size: 2.5rem; /* Reducir aún más el tamaño del ícono */
+    }
+
+    .beneficio .titulo-beneficio {
+        font-size: 0.9rem; /* Reducir tamaño del texto */
+    }
+
+    .nosotros-text h2 {
+        font-size: 1.2rem; /* Ajustar tamaño del encabezado */
+    }
+}
+}
+/* SECCIÓN WHATSAPP */
+/* Ajustes responsive */
+@media only screen and (max-width: 768px) {
+    .btn-wsp {
+        width: 50px;
+        height: 50px;
+        font-size: 25px;
+    }
+
+    .wsp-message {
+        font-size: 12px;
+        padding: 8px 12px;
+        right: 65px; /* Ajuste responsive */
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .btn-wsp {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    .wsp-message {
+        font-size: 10px;
+        padding: 6px 10px;
+        right: 60px;
+    }
+}
+/* Responsividad */
+@media (max-width: 768px) {
+    .contact-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contacto-info, .formulario-contacto, .redes-sociales {
+        flex: 1 1 100%;
+        text-align: center;
+    }
+
+    .redes-sociales {
+        margin-top: 15px;
+    }
+
+    .formulario-contacto button {
+        width: auto;
+    }
+}

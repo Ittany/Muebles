@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+    <title>Empresa de Melanina</title>
+    <!-- Link To CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Box Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+/>
+
+
+
+</head>
+<body>
+    <header>
+        <a href="#inicio" class="logo">
+            <img src="images/logo.png" alt="Inicio" style="height: 60px;">
+        </a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+        <ul class="navbar active">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#comprar">Comprar</a></li>
+            <li><a href="#últimos">Últimos</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#comentarios">Comentarios</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+
+    </header>
+    <!-- SECCIÓN DE INICIO -->
+    <section class="inicio" id="inicio">
+        <div class="inicio-texto">
+            <h1><span>El toque  </span> perfecto <br> para <span>  tu hogar</span></h1>
+            <p>Transforma tus espacios con muebles <br> de melamina duraderos y elegantes.</p>
+            <a href="https://api.whatsapp.com/send?phone=+51964976727&text=¡Hola!%20Estoy%20interesado%20en%20sus%20muebles.%20¿Podría%20darme%20más%20información?" class="btn">Escribenos Ahora</a>
+        </div>
+    </section>
+
+    <!--SECCION DE WATSAPP-->
+    
+    <div class="wsp-container">
+        <a href="https://api.whatsapp.com/send?phone=+51964976727&text=¡Hola!%20Estoy%20interesado%20en%20sus%20muebles.%20¿Podría%20darme%20más%20información?" 
+           class="btn-wsp" target="_blank">
+            <i class='bx bxl-whatsapp'></i>
+        </a>
+        <span class="wsp-message">¡Escríbenos para más información!</span>
+    </div>
+
+
+
+<!-- LA SECCIÓN DE COMPRA -->
+<section class="comprar" id="comprar">
+      <!-- Navegación por Filtros -->
+<div class="filtros">
+    <button class="filtro-btn" data-categoria="todos">
+        <i class="material-icons">apps</i>
+        Todos
+    </button>
+    <button class="filtro-btn" data-categoria="sala">
+        <i class="material-icons">weekend</i>
+        Sala
+    </button>
+    <button class="filtro-btn" data-categoria="cocina">
+        <i class="material-icons">countertops</i>
+        Cocina
+    </button>
+    <button class="filtro-btn" data-categoria="dormitorio">
+        <i class="material-icons">local_hotel</i>
+        Dormitorio
+    </button>
+    <button class="filtro-btn" data-categoria="escritorio">
+        <i class="material-icons">desk</i>
+        Escritorio
+    </button>
+</div>
+
+    <div class="heading">
+        <span>Artículos Disponibles</span>
+        <h2>Encuentra Lo Que Estás Buscando</h2>
+    </div>
+    <!-- Contenedor -->
+    <div class="comprar-contendor">
+        <!-- Contenedor 1 Escritorio -->
+        <div class="cajon" data-categoria="escritorio">
+            <div class="cajon-imagen">
+                <img src="Images/mueble1.jpg" alt="Escritorio Media Luna">
+            </div>
+            <div class="titulo-principal">
+                <h3 class="producto-nombre">Escritorio Media Luna</h3>
+                <div class="destacado">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+                </div>
+            </div>
+            <div class="producto-precio">
+                <span>s/50</span>
+                <i class='bx bx-cart'></i>
+            </div>
+        </div>
+        <!-- Contenedor 2 Zapatera -->
+        <div class="cajon" data-categoria="sala">
+            <div class="cajon-imagen">
+                <img src="Images/mueble2.jpg" alt="Zapatera con cajón">
+            </div>
+            <div class="titulo-principal">
+                <h3 class="producto-nombre">Zapatera con Cajón</h3>
+                <div class="destacado">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+                </div>
+            </div>
+            <div class="producto-precio">
+                <span>s/50</span>
+                <i class='bx bx-cart'></i>
+            </div>
+        </div>
+            <!--Contenedor 3 Esquinero de libros-->
+            <div class="cajon" data-categoria="escritorio">
+                <div class="cajon-imagen">
+                    <img src="Images/mueble3.jpg" alt="Esquinero de libros">
+                </div>
+                <div class="titulo-principal">
+                    <h3 class="producto-nombre">Esquinero de Libros</h3>
+                    <div class="destacado">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star-half'></i>
+                    </div>
+                </div>
+                <div class="producto-precio">
+                    <span>s/50</span>
+                    <i class='bx bx-cart'></i>
+                </div>
+            </div>
+            <!--Contenedor 4 Estante de gradas-->
+            <div class="cajon" data-categoria="sala">
+                <div class="cajon-imagen">
+                    <img src="Images/mueble4.jpg" alt="Estante de gradas">
+                </div>
+                <div class="titulo-principal">
+                    <h3 class="producto-nombre">Estante de Gradas</h3>
+                    <div class="destacado">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star-half'></i>
+                    </div>
+                </div>
+                <div class="producto-precio">
+                    <span>s/50</span>
+                    <i class='bx bx-cart'></i>
+                </div>
+            </div>
+            <!--Contenedor 5 Mesa de Noche en L-->
+            <div class="cajon" data-categoria="dormitorio">
+                <div class="cajon-imagen">
+                    <img src="Images/mueble5.jpg" alt=" Mesa de Noche en L">
+                </div>
+                <div class="titulo-principal">
+                    <h3 class="producto-nombre"> Mesa de Noche en L</h3>
+                    <div class="destacado">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star-half'></i>
+                    </div>
+                </div>
+                <div class="producto-precio">
+                    <span>s/50</span>
+                    <i class='bx bx-cart'></i>
+                </div>
+            </div>
+            <!--Contenedor 6  Mueble Para TV con Estante-->
+            <div class="cajon" data-categoria="sala">
+                <div class="cajon-imagen">
+                    <img src="Images/mueble6.jpg" alt="  Mueble Para TV con Estante">
+                </div>
+                <div class="titulo-principal">
+                    <h3 class="producto-nombre"> Mueble Para TV con Estante </h3>
+                    <div class="destacado">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star-half'></i>
+                    </div>
+                </div>
+                <div class="producto-precio">
+                    <span>s/50</span>
+                    <i class='bx bx-cart'></i>
+                </div>
+            </div>
+            <!--Contenedor 7 Mueble para TV con Tres cajones-->
+            <div class="cajon" data-categoria="sala">
+                <div class="cajon-imagen">
+                    <img src="Images/mueble7.jpg" alt=" Mueble para TV con Tres cajones">
+                </div>
+                <div class="titulo-principal">
+                    <h3 class="producto-nombre"> Mueble para TV con Tres Cajones</h3>
+                    <div class="destacado">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star-half'></i>
+                    </div>
+                </div>
+                <div class="producto-precio">
+                    <span>s/50</span>
+                    <i class='bx bx-cart'></i>
+                </div>
+            </div>
+            <!--Contenedor 8 Respostero de Cocina Simple-->
+            <div class="cajon" data-categoria="cocina">
+                <div class="cajon-imagen">
+                    <img src="Images/mueble8.jpg" alt=" Respostero de Cocina Simple">
+                </div>
+                <div class="titulo-principal">
+                    <h3 class="producto-nombre"> Respostero de Cocina Simple</h3>
+                    <div class="destacado">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star-half'></i>
+                    </div>
+                </div>
+                <div class="producto-precio">
+                    <span>s/50</span>
+                    <i class='bx bx-cart'></i>
+                </div>
+            </div>
+            <!--Contenedor 9 Armario con Puertas Deslizantes-->
+            <div class="cajon" data-categoria="dormitorio">
+                <div class="cajon-imagen">
+                    <img src="Images/mueble9.jpg" alt=" Armario con Puertas Deslizantes">
+                </div>
+                <div class="titulo-principal">
+                    <h3 class="producto-nombre"> Armario con Puertas Deslizantes</h3>
+                    <div class="destacado">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star-half'></i>
+                    </div>
+                </div>
+                <div class="producto-precio">
+                    <span>s/50</span>
+                    <i class='bx bx-cart'></i>
+                </div>
+            </div>
+                        <!--Contenedor 10 Armario con Multiples Cajones-->
+            <div class="cajon" data-categoria="dormitorio">
+                <div class="cajon-imagen">
+                    <img src="Images/mueble10.jpg" alt=" Armario con Multiples Cajones">
+                </div>
+                <div class="titulo-principal">
+                    <h3 class="producto-nombre"> Armario con Multiples Cajones</h3>
+                    <div class="destacado">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star-half'></i>
+                    </div>
+                </div>
+                <div class="producto-precio">
+                    <span>s/50</span>
+                    <i class='bx bx-cart'></i>
+                </div>
+            </div>
+            <!--Contenedor 11 Armario de Dobles Puertas-->
+            <div class="cajon" data-categoria="dormitorio">
+                <div class="cajon-imagen">
+                    <img src="Images/mueble11.jpg" alt=" Armario de Dobles Puertas">
+                </div>
+                <div class="titulo-principal">
+                    <h3 class="producto-nombre"> Armario de Dobles Puertas</h3>
+                    <div class="destacado">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star-half'></i>
+                    </div>
+                </div>
+                <div class="producto-precio">
+                    <span>s/50</span>
+                    <i class='bx bx-cart'></i>
+                </div>
+            </div>
+            <!--Contenedor 12  Escritorio con Estante Superior-->
+            <div class="cajon" data-categoria="escritorio">
+                <div class="cajon-imagen">
+                    <img src="Images/mueble12.jpg" alt="  Escritorio con Estante Superior">
+                </div>
+                <div class="titulo-principal">
+                    <h3 class="producto-nombre"> Escritorio con Estante Superior</h3>
+                    <div class="destacado">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star-half'></i>
+                    </div>
+                </div>
+                <div class="producto-precio">
+                    <span>s/50</span>
+                    <i class='bx bx-cart'></i>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+
+    </section>
+    <!--ÚLTIMOS PROYECTOS-->
+    <section class="últimos" id="últimos">
+        <div class="heading">
+            <span>Últimos Proyectos</span>
+            <h2>Nuestro Trabajo con Clientes</h2>
+        </div>
+        <!--Contenido-->
+        <div class="nuevo-contenedor">
+            <!--Contenedor Nuevo 1-->
+            <div class="cajon">
+                <div class="cajon-imagen">
+                    <img src="Images/mueble5.jpg" alt=" Mesa de Noche en L">
+                </div>
+                <div class="titulo-principal">
+                    <h3 class="producto-nombre"> Mesa de Noche en L</h3>
+                    <div class="destacado">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star-half'></i>
+                    </div>
+                </div>
+                <div class="producto-precio">
+                    <span>s/50</span>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+   <!--Sobre Nosotros-->
+  <section class="nosotros" id="nosotros">
+    <div class="nosotros-imagen">
+        <img src="Images/imagen-grande.jpg" alt="Imagen grande">
+    </div>
+     <div class="nosotros-text">
+        <h2>¿Por qué elegirnos?</h2>
+       <div class="beneficios">
+           <div class="beneficio">
+               <i class='bx bx-dollar-circle icon'></i>
+               <span class="titulo-beneficio">Precios cómodos</span>
+           </div>
+           <div class="beneficio">
+               <i class='bx bxs-user-detail icon'></i>
+               <span class="titulo-beneficio">Atención Activa</span>
+           </div>
+           <div class="beneficio">
+               <i class='bx bxs-badge-check' ></i>
+               <span class="titulo-beneficio">Muebles personalizados</span>
+           </div>
+
+
+
+
+
+       </div>
+     </div>
+ </section>
+ 
+    <!-- SECCIÓN DE COMENTARIOS -->
+    <section class="comentarios" id="comentarios">
+        <div class="heading">
+          <span>Tu Opinión Nos Ayuda</span>
+          <h2>Comentarios Destacados</h2>
+        </div>
+    
+        <!-- Lista de comentarios -->
+        <div class="comentarios-lista" id="comentariosLista"></div>
+    
+        <!-- Botón para ver más comentarios -->
+        <button class="ver-mas" id="verMas" onclick="mostrarMasComentarios()">Ver más</button>
+    
+        <!-- Formulario para agregar comentarios -->
+        <form class="comentario-form" id="comentarioForm">
+          <input type="text" id="nombre" placeholder="Tu nombre" required>
+          <textarea id="comentario" placeholder="Escribe tu comentario" required></textarea>
+          <button type="button" onclick="agregarComentario()">Enviar</button>
+        </form>
+    </section>
+<!-- SECCIÓN DE CONTÁCTANOS -->
+ <section id="contacto" class="contact-section">
+    <div class="contacto-info">
+        <h2>Más información</h2>
+        <!-- Mapa interactivo de Google Maps -->
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31215.50097792871!2d-75.21693119609314!3d-12.047812893913152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x910e964104fb82f1%3A0xf8e45b61c55982fa!2sHuancayo!5e0!3m2!1ses!2spe!4v1735755273283!5m2!1ses!2spe" 
+            width="100%" 
+            height="250" 
+            style="border:0;" 
+            allowfullscreen 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade" 
+            class="mapa-contacto">
+        </iframe>
+        <ul>
+            <li><i class='bx bx-phone'></i> Teléfono: +51 964 976 727</li>
+            <li><i class='bx bxl-gmail'></i> Correo: contacto@ejemplo.com</li>
+            <li><i class='bx bx-map'></i> Dirección: Huancayo, Perú</li>
+        </ul>
+        <!-- Redes sociales alineadas a la izquierda -->
+        <div class="redes-sociales">
+            <a href="https://www.facebook.com/" target="_blank">
+                <i class='bx bxl-facebook-square'></i>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=+51964976727&text=¡Hola!%20Estoy%20interesado%20en%20sus%20muebles.%20¿Podría%20darme%20más%20información?" target="_blank">
+                <i class='bx bxl-whatsapp'></i>
+            </a>
+            <a href="https://www.tiktok.com/" target="_blank">
+                <i class='bx bxl-tiktok'></i>
+            </a>
+        </div>
+    </div>
+    <!-- Formulario de contacto -->
+    <div class="formulario-contacto">
+        <h3>Contáctanos</h3>
+        <form id="formularioContacto">
+            <input type="text" id="nombre" placeholder="Nombre" required>
+            <input type="text" id="apellido" placeholder="Apellido" required>
+            <input type="text" id="referencia" placeholder="Ubicación de referencia" required>
+            <textarea id="mensaje" placeholder="Escribe tu mensaje aquí" rows="5" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+ </section>
+
+
+    
+  <script src="main.js"></script>
+</body>
+</html>
