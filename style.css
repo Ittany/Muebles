@@ -11,6 +11,7 @@ text-decoration: none;
 font-family: "Poppins", sans-serif;
 }
 /* SECCIÓN WHATSAPP */
+/* SECCIÓN WHATSAPP */
 /* Contenedor del botón y mensaje */
 .wsp-container {
     position: fixed;
@@ -21,7 +22,7 @@ font-family: "Poppins", sans-serif;
     z-index: 100;
 }
 
-/* Botón de WhatsApp (mantener diseño original) */
+/* Botón de WhatsApp (con efecto pulse permanente) */
 .btn-wsp {
     width: 60px;
     height: 60px;
@@ -32,43 +33,45 @@ font-family: "Poppins", sans-serif;
     justify-content: center;
     align-items: center;
     font-size: 30px;
-    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 10px 20px rgba(10, 141, 58, 0.3);
     transition: all 300ms ease;
+    animation: pulse 1.5s infinite; /* Efecto de pulso siempre activo */
 }
 
 .btn-wsp:hover {
-    background: #20ba5a;
+    background: #159345;
+}
+
+/* Animación de pulse */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
 }
 
 /* Mensaje al lado del botón */
 .wsp-message {
-    margin-right: 0px; /* Ajusta para que esté a la derecha */
+    margin-right: 0px;
     background-color: #25d366;
     color: white;
     padding: 10px 15px;
     border-radius: 25px;
     font-size: 14px;
     box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
-    white-space: nowrap; /* Evita que el texto se parta */
-    opacity: 0; /* Inicialmente invisible */
-    transform: translateX(10px);
-    transition: all 300ms ease;
+    white-space: nowrap;
     position: absolute;
-    right: 80px; /* Se ajusta respecto al ícono */
+    right: 80px;
+    opacity: 1; /* Se muestra siempre */
+    transform: translateX(0);
 }
 
-/* Efecto al pasar el mouse */
-.wsp-container:hover .wsp-message {
-    opacity: 1;
-    transform: translateX(0); /* Vuelve al lugar original */
-}
 
 
 
 
 :root {
   --text-color: #000000;
-  --main-color: #83b735;
+  --main-color: #af6f2c;
   --background-color: #f9f9f9;
   --secondary-color: #ffffff;
   --border-color: #ddd;
@@ -101,6 +104,7 @@ header {
 .logo span {
     color: var(--main-color);
 }
+/* Navbar */
 .navbar {
     display: flex; /* Asegura que los elementos estén en línea */
     justify-content: space-around; /* Espaciado uniforme */
@@ -117,16 +121,44 @@ header {
     padding: 10px;
 }
 
+/* Estilos de los enlaces */
 .navbar a {
     font-size: 1rem;
     padding: 10px 20px;
     font-weight: 500;
     color: var(--text-color);
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* ✅ Efecto hover elegante con línea deslizante */
+.navbar a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--main-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
 }
 
 .navbar a:hover {
     color: var(--main-color);
 }
+
+.navbar a:hover::after {
+    width: 100%; /* La línea se extiende al 100% */
+}
+
+/* ✅ Efecto al hacer clic */
+.navbar a:active {
+    transform: scale(0.95); /* Simula un botón presionado */
+    transition: transform 0.1s ease;
+}
+
 .inicio {
     width: 100%;
     min-height: 100vh;
@@ -168,14 +200,66 @@ header {
     color: #fff;
     border-radius: 0.3rem;
     font-size: 14px;
-    text-align: center; /* El texto dentro del botón está centrado */
-    margin: 0; /* Quita márgenes extra */
-    align-self: flex-start; /* Asegura que el botón se alinee al inicio del contenedor */
+    text-align: center;
+    margin: 0;
+    align-self: flex-start;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    
+    /* Transiciones suaves */
+    transition: background 0.4s ease, transform 0.2s ease-in-out;
 }
 
+/* Efecto hover con transición de color */
 .btn:hover {
-    background: #8fc538;
+    background: #704a28; /* Color más oscuro al pasar el mouse */
 }
+
+/* Efecto "pulse" continuo */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.6);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.3);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.6);
+    }
+}
+
+.btn.pulse-effect {
+    animation: pulse 2s infinite;
+}
+
+/* Efecto de "onda" al hacer clic */
+.btn:active {
+    transform: scale(0.95);
+}
+
+/* Efecto de relleno al hacer hover */
+.btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.btn:hover::before {
+    transform: scaleX(1);
+}
+
 
 
 /* SECCIÓN DE COMPRAR  NAVEGACIÓN */
@@ -311,69 +395,150 @@ header {
 }
 
 /* Precio y carrito juntos */
-.producto-precio {
-    display: flex;
-    align-items: center; /* Alinea verticalmente */
-    font-size: 1.2rem;
-    font-weight: 400;
-    color: var(--text-color);
-    margin-top: 8px;
+.producto-precio a {
+    display: inline-flex; /* Para que solo ocupe el tamaño del texto */
+    align-items: center; /* Alinear el icono con el texto */
+    gap: 8px; /* Espacio entre el texto y el icono */
+    text-decoration: none; /* Quita el subrayado del enlace */
+    background-color: #af6f2c; /* Color de fondo del botón */
+    color: white; /* Color del texto */
+    padding: 8px 12px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    font-weight: bold; /* Texto en negrita */
+    transition: background 0.3s; /* Efecto de hover */
 }
 
-.producto-precio span {
-    color: var(--main-color); /* Color principal para el precio */
+.producto-precio a:hover {
+    background-color: #724005; /* Color más oscuro al pasar el mouse */
 }
 
 .producto-precio i {
-    position: absolute;
-    bottom:0;
-    right: 0;
-    padding: 7px;
-    font-size: 20px;
-    color: #fff;
-    border-radius: 4px 0 4px 0;
-    background: var(--main-color);
+    font-size: 20px; /* Ajustar tamaño del ícono */
 }
 
-/* Hover en el ícono del carrito */
-.producto-precio i:hover {
-    color: #3a6100;
-}
 
 
 /* LA SECCIÓN DE LO ÚLTIMO */
-.últimos .heading {
-    text-align: center; 
+.últimos {
+    padding: 60px 20px;
+    background-color: #f8f8f8;
+    text-align: center;
 }
-  
-.últimos .heading span {
-    color: var(--main-color); 
-    font-size: 1rem;
+
+.heading span {
     display: block;
-    margin-bottom: 0.3px; 
-    font-weight: bold;
+    font-size: 18px;
+    color: #555;
 }
-  
-.últimos .heading h2 {
-    color: var(--text-color);
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 20px;
+
+.heading h2 {
+    font-size: 32px;
+    margin: 10px 0 30px;
+    color: #333;
+}
+
+.expo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 0 10px;
+}
+
+.expo-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.expo-card:hover {
+    transform: translateY(-10px);
+}
+
+.expo-imagen img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.expo-detalle {
+    padding: 15px;
+}
+
+.producto-nombre {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #444;
 }
 
 /* SECCIÓN DE NOSOTROS */
+.nosotros {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    align-items: center;
+    padding: 3rem 2rem;
+    background-color: #f9f9f9;
+}
+
+.nosotros-imagen {
+    display: flex;
+    justify-content: center;
+}
+
+.nosotros-imagen img {
+    width: 90%;
+    max-width: 500px;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nosotros-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+}
+
+.nosotros-text h2 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: var(--main-color);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.nosotros-text p {
+    margin-right: 2rem;
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* BENEFICIOS */
+.beneficios {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
 .beneficio {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     text-align: center;
     padding: 1rem;
+    width: 200px;
     border: 1px solid #ddd;
     border-radius: 8px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-bottom: 0.3rem;
 }
 
 .beneficio:hover {
@@ -382,52 +547,70 @@ header {
 }
 
 .beneficio i {
-    font-size: 4rem; /* Tamaño del icono */
-    color: #555; /* Color base */
+    font-size: 3rem;
+    color: #555;
     transition: color 0.3s ease;
 }
 
 .beneficio:hover i {
-    color: green; /* Color al pasar el cursor */
+    color: #986737;
 }
 
 .beneficio .titulo-beneficio {
-    font-size: 1.2rem; /* Tamaño del texto */
+    font-size: 1.2rem;
     font-weight: bold;
     color: #555;
     transition: color 0.3s ease;
 }
 
 .beneficio:hover .titulo-beneficio {
-    color: green; /* Color del texto al pasar el cursor */
+    color: #986737;
 }
 
-/* SECCIÓN DE NOSOTROS */
-.nosotros {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-}
+/* RESPONSIVIDAD */
+@media (max-width: 768px) {
+    .nosotros {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1rem;
+    }
 
-.nosotros-imagen img {
-    width: 80%; 
-    border-radius: 10px; 
-    object-fit: contain;
-}
+    .nosotros-imagen img {
+        width: 90%;
+        max-width: 400px;
+    }
 
-.nosotros-text {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-}
+    .nosotros-text {
+        width: 100%;
+        padding: 0 1rem;
+    }
 
-.nosotros-text h2 {
-    font-size: 2rem;
-    font-weight: bold;
-    color: var(--main-color);
-    margin-bottom: 1rem;
+    .nosotros-text h2 {
+        font-size: 1.8rem;
+    }
+
+    .nosotros-text p {
+        font-size: 1rem;
+    }
+
+    .beneficios {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .beneficio {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    .beneficio i {
+        font-size: 2rem;
+    }
+
+    .titulo-beneficio {
+        font-size: 1rem;
+    }
 }
 
 
@@ -617,19 +800,26 @@ header {
 }
 
 /* Redes sociales alineadas a la izquierda */
+/* Redes sociales alineadas a la izquierda */
 .redes-sociales {
     display: flex;
     justify-content: flex-start; /* Alineación a la izquierda */
-    gap: 10px;
+    gap: 15px; /* Más separación entre iconos */
     margin-top: 20px;
 }
 
+/* Iconos más grandes y con efecto pulse */
 .redes-sociales a {
-    font-size: 1.5rem;
+    font-size: 2.5rem; /* Aumentamos el tamaño */
     color: var(--text-color);
     transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: pulse 1.5s infinite; /* Efecto de pulso permanente */
 }
 
+/* Efecto de cambio de color al hacer hover */
 .redes-sociales a:hover i.bxl-facebook-square {
     color: var(--facebook-color);
 }
@@ -641,6 +831,14 @@ header {
 .redes-sociales a:hover i.bxl-tiktok {
     color: var(--tiktok-color);
 }
+
+/* Animación de pulse */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); } /* Crece un poco más */
+    100% { transform: scale(1); }
+}
+
 
 .formulario-contacto input, .formulario-contacto textarea {
     width: 100%;
@@ -666,6 +864,93 @@ header {
 
 .formulario-contacto button:hover {
     background-color: #000;
+}
+
+/* style.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.contact-box {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.column img {
+    width: 80px;
+}
+
+.column a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 14px;
+}
+
+.column a:hover {
+    text-decoration: underline;
+    color: var(--main-color);
+}
+
+/* Responsive manteniendo columnas pequeñas */
+@media (max-width: 1024px) {
+    .contact-box {
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .column {
+        font-size: 13px;
+    }
+
+    .column img {
+        width: 70px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-box {
+        gap: 8px;
+        padding: 10px;
+    }
+
+    .column {
+        font-size: 12px;
+    }
+
+    .column img {
+        width: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-box {
+        gap: 6px;
+        padding: 8px;
+    }
+
+    .column {
+        font-size: 11px;
+    }
+
+    .column img {
+        width: 50px;
+    }
 }
 
 
